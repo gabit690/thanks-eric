@@ -1,54 +1,92 @@
-# React + TypeScript + Vite
+# Eric's Quote Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A heartfelt tribute project created to honor our dear colleague Eric Yapura on his last day at the company. This application generates shareable quote images featuring Eric's photo, allowing team members to create memorable messages that capture the essence of our time working together.
 
-Currently, two official plugins are available:
+## Project Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This web application allows users to:
 
-## Expanding the ESLint configuration
+- Create custom quotes with Eric's image
+- Preview the quote in real-time
+- Download the generated image
+- Share their thoughts and memories in a visually appealing format
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+The design features a dark theme with deep blue tones, creating a professional and meaningful atmosphere that matches the significance of the occasion.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Technologies Used
+
+- **React 18** - Frontend library
+- **TypeScript** - Type safety and better developer experience
+- **Tailwind CSS** - Styling and responsive design
+- **Vite** - Build tool and development server
+- **HTML2Canvas** - Image generation from HTML
+- **ESLint** - Code quality and consistency
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm or yarn package manager
+
+### Installation
+
+1. Clone the repository
+
+```bash
+git clone [repository-url]
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Navigate to the project directory
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+cd thanks-eric
 ```
+
+3. Install dependencies
+
+```bash
+npm install
+# or
+yarn install
+```
+
+4. Start the development server
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+5. Open your browser and visit `http://localhost:5173`
+
+## Building for Production
+
+To create a production build:
+
+```bash
+npm run build
+# or
+yarn build
+```
+
+The built files will be in the `dist` directory.
+
+## Project Structure
+
+```
+src/
+  ├── components/         # React components
+  ├── assets/            # Images and static files
+  ├── styles/            # Global styles
+  └── types/             # TypeScript type definitions
+```
+
+## Contributing
+
+This project was created as a farewell gift. While it's primarily a tribute project, I welcome any improvements or suggestions that would make it even more special.
+
+## License
+
+This project is open source and available under the MIT License.

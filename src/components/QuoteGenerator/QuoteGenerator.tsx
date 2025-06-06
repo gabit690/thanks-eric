@@ -90,6 +90,7 @@ export const QuoteGenerator = () => {
           <textarea
             value={quote.text}
             onChange={handleQuoteChange}
+            placeholder="Write something... 🤔"
             className="w-full p-2 bg-[#051027] border border-[#0a1a3c] rounded-md text-white placeholder-gray-400 focus:ring-2 focus:ring-[#1a365d] focus:border-transparent shadow-lg"
             rows={3}
             maxLength={MAX_CHARS}
