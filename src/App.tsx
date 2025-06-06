@@ -3,8 +3,8 @@ import { Footer } from "./components/Footer/Footer";
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#020617]">
-      <header className="w-full bg-[#051027] shadow-lg border-b border-[#0a1a3c]">
+    <div className="min-h-screen bg-[#001f3d]">
+      <header className="w-full bg-[#002b4f] shadow-lg border-b border-[#003d73]">
         <h1 className="text-3xl font-bold text-gray-100 text-center py-6">
           Eric's quote generator
         </h1>

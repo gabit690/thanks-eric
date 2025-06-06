@@ -47,7 +47,7 @@ export const QuoteGenerator = () => {
       {/* Preview Section */}
       <div
         ref={quoteRef}
-        className="bg-black text-white p-8 rounded-lg shadow-xl w-[800px] mx-auto border border-[#0a1a3c]"
+        className="bg-black text-white p-8 rounded-lg shadow-xl w-[800px] mx-auto border border-[#003d73]"
       >
         <div className="flex items-center justify-center">
           <div className="inline-flex items-center">
@@ -91,14 +91,14 @@ export const QuoteGenerator = () => {
             value={quote.text}
             onChange={handleQuoteChange}
             placeholder="Write something... 🤔"
-            className="w-full p-2 bg-[#051027] border border-[#0a1a3c] rounded-md text-white placeholder-gray-400 focus:ring-2 focus:ring-[#1a365d] focus:border-transparent shadow-lg"
+            className="w-full p-2 bg-[#002b4f] border border-[#003d73] rounded-md text-white placeholder-gray-400 focus:ring-2 focus:ring-[#004a8f] focus:border-transparent shadow-lg"
             rows={3}
             maxLength={MAX_CHARS}
           />
         </div>
         <button
           onClick={downloadImage}
-          className="mt-4 bg-emerald-600 text-white px-6 py-3 rounded-md hover:bg-emerald-500 active:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-[#020617] shadow-lg hover:shadow-emerald-500/30 font-semibold transition-all duration-200 border border-emerald-500/20"
+          className="mt-4 bg-emerald-600 text-white px-6 py-3 rounded-md hover:bg-emerald-500 active:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-[#001f3d] shadow-lg hover:shadow-emerald-500/30 font-semibold transition-all duration-200 border border-emerald-500/20"
         >
           Download image
         </button>
