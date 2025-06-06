@@ -65,7 +65,7 @@ export const QuoteGenerator = () => {
                 "{quote.text}"
               </p>
               <div className="mt-6 self-center">
-                <p className="text-xl italic">- Eric Yapura</p>
+                <p className="text-xl">- Eric Yapura</p>
               </div>
             </div>
           </div>
