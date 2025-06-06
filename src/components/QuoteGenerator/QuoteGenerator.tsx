@@ -47,7 +47,7 @@ export const QuoteGenerator = () => {
       {/* Preview Section */}
       <div
         ref={quoteRef}
-        className="bg-black text-white p-8 rounded-lg shadow-xl w-[800px] mx-auto border border-[#003d73]"
+        className="bg-black text-white p-8 rounded-lg shadow-xl w-[800px] mx-auto"
       >
         <div className="flex items-center justify-center">
           <div className="inline-flex items-center">
