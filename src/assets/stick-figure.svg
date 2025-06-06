@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="300" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cabeza -->
+  <circle cx="100" cy="50" r="30" stroke="black" stroke-width="4" fill="white"/>
+  <!-- Cuerpo -->
+  <line x1="100" y1="80" x2="100" y2="200" stroke="black" stroke-width="4"/>
+  <!-- Brazos -->
+  <line x1="100" y1="120" x2="40" y2="160" stroke="black" stroke-width="4"/>
+  <line x1="100" y1="120" x2="160" y2="160" stroke="black" stroke-width="4"/>
+  <!-- Piernas -->
+  <line x1="100" y1="200" x2="60" y2="280" stroke="black" stroke-width="4"/>
+  <line x1="100" y1="200" x2="140" y2="280" stroke="black" stroke-width="4"/>
+  <!-- Ojos -->
+  <circle cx="85" cy="45" r="5" fill="black"/>
+  <circle cx="115" cy="45" r="5" fill="black"/>
+  <!-- Sonrisa -->
+  <path d="M80 60 Q100 80 120 60" stroke="black" stroke-width="4" fill="transparent"/>
+</svg> 

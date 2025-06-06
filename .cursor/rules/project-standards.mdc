@@ -1,0 +1,167 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+## STACK TECNOLÓGICO PRINCIPAL
+- Para proyectos nuevos: React 19+ con TypeScript 5+ (previa verificación de compatibilidad)
+- Vite como bundler por defecto
+- Zustand como primera opción para estado global (preferible sobre Redux)
+- Vitest + Testing Library para pruebas unitarias y de integración
+- Cypress para pruebas E2E
+
+## ESTRUCTURA DE CARPETAS
+Seguimos esta estructura de carpetas estandarizada (crear las carpetas teniendo en cuenta el sistema operativo utilizado):
+
+### src/assets
+Recursos estáticos como imágenes, fuentes, íconos, etc.
+
+### src/components
+Componentes reutilizables, presentacionales o sin lógica de negocio.
+
+### src/constants
+Constantes globales en mayúsculas (SCREAMING_SNAKE_CASE).
+
+### src/contexts
+Contextos de React para manejo de estado global o compartido.
+
+### src/hooks
+Hooks personalizados. Siempre deben empezar con `use`.
+
+### src/layouts
+Componentes de estructura fija como `Header`, `Sidebar`, `Footer`.
+
+### src/features  
+Agrupa funcionalidades completas o dominios de negocio, como `user`, `webchat`, `notifications`, etc. Cada subcarpeta contiene componentes, hooks, servicios y lógica propia de esa feature.
+
+### src/pages
+Componentes que representan páginas completas o rutas.
+
+### src/services
+Encapsulan lógica para acceder a APIs externas o internas.
+
+### src/styles
+Estilos globales, variables de tema, normalizadores.
+
+### src/types
+Interfaces y tipos de TypeScript compartidos entre capas.
+
+### src/utils
+Funciones auxiliares y helpers generales.
+
+### src/utils/api
+Configuración base del cliente HTTP (Axios, Fetch, etc.).
+
+### src/utils/adapters
+Transformaciones de datos entre distintos formatos (ej: snake_case ↔ camelCase).
+
+### src/tests
+Pruebas unitarias o E2E con títulos de los casos de prueba en inglés.
+
+## PATRONES DE COMPONENTES
+- **Siempre** usar arrow functions para componentes, **nunca** componentes de clase
+- Usar PascalCase para nombres de componentes y sus carpetas/archivos
+- Separar la lógica de negocios (contenedores) de la presentación (componentes)
+- Evitar crear componentes con estado dentro de bucles
+- Preferir composición sobre herencia para compartir código
+- Extraer lógica común a custom hooks (con prefijo "use")
+- Memoizar selectivamente con React.memo, useMemo y useCallback donde sea necesario
+- Mantener componentes pequeños y enfocados en una sola responsabilidad
+
+## TYPESCRIPT
+- Uso estricto y obligatorio (strict: true)
+- Preferir interfaces sobre types para objetos
+- Evitar "any" a toda costa, usar "unknown"
+- Implementar genéricos cuando sea apropiado
+- Tipos explícitos para props, estados y funciones
+- Evitar type assertions cuando sea posible
+- Usar type guards para narrow types
+- Implementar union/intersection types cuando tenga sentido
+
+## GESTIÓN DE ESTADO
+- Estado local: useState o useReducer
+- Estado global: Zustand (primera opción) o Redux Toolkit
+- No crear componentes con estado dentro de bucles o iteraciones
+- Evitar prop drilling usando Context cuando sea apropiado
+- Mantener estado mínimo y derivar valores cuando sea posible
+- Actualizar estado de forma inmutable
+
+## ASINCRONÍA Y MANEJO DE ERRORES
+- Usar **siempre** async/await con try/catch/finally en lugar de cadenas de promesas (.then/.catch)
+- Implementar manejo de errores tipo-seguro con clases de error específicas
+- Usar finally para garantizar limpieza de recursos y estados
+- Aprovechar Promise.all para operaciones paralelas independientes
+- Implementar cancelación de operaciones asíncronas (especialmente en efectos)
+- Propagar errores con información de contexto cuando sea necesario
+- Evitar por completo el anidamiento de promesas o callbacks
+- Usar Error Boundaries para capturar errores en el árbol de componentes
+
+## PERFORMANCE Y OPTIMIZACIÓN
+- Virtualizar listas con más de 100 elementos (react-window o react-virtualized)
+- Implementar code-splitting y lazy loading para reducir bundle inicial
+- Usar React.memo, useMemo y useCallback estratégicamente, no prematuramente
+- Optimizar dependencias (evitar bibliotecas grandes o duplicadas)
+- Medir rendimiento con React DevTools Profiler antes de optimizar
+- Monitorear métricas Web Vitals (LCP, FID, CLS)
+- Implementar debounce/throttle para eventos frecuentes (resize, scroll, input)
+- Usar keys estables y únicas en listas (nunca índices si el orden puede cambiar)
+
+## ACCESIBILIDAD
+- Todos los proyectos deben cumplir WCAG 2.1 nivel AA
+- Usar elementos HTML semánticos (no divs para todo)
+- Implementar navegación por teclado
+- Usar roles ARIA apropiados
+- Asegurar contraste suficiente (4.5:1 para texto normal)
+- Incluir textos alternativos en imágenes
+- Etiquetar correctamente todos los controles de formulario
+- Realizar pruebas con lectores de pantalla
+- Incluir manejo de focus para componentes interactivos (especialmente modales)
+
+## HTTP Y MANEJO DE APIS
+- Centralizar configuración Axios con interceptores
+- Transformar automáticamente camelCase (frontend) ↔ snake_case (backend)
+- Estructurar servicios en capas: Interfaces → Implementaciones → Hooks
+- Implementar manejo consistente de errores HTTP
+- Utilizar React Query para cacheo, revalidación y manejo de estado
+- Abstraer lógica de servicios en hooks para facilitar reutilización
+
+## FORMULARIOS
+- Usar React Hook Form para gestión de formularios complejos
+- Implementar validación con Zod o Yup
+- Mostrar errores después de blur o submit, no en cada keystroke
+- Deshabilitar botones de submit durante procesamiento
+- Mantener estado controlado para formularios simples
+- Proporcionar feedback visual claro sobre estado de validación
+
+## ESTÁNDARES DE CALIDAD
+- Cobertura mínima de pruebas: 70%
+- Implementar pruebas unitarias, integración y E2E
+- Documentar APIs públicas, hooks personalizados y componentes
+- Revisar accesibilidad antes de entregar código
+- Optimizar rendimiento con el profiler de React
+- Seguir convenciones de nomenclatura consistentemente
+
+## LIBRERÍAS RECOMENDADAS
+- UI: MUI, TailwindCSS, Styled Components, TanStack Table
+- Estado: Zustand, Redux Toolkit (para apps complejas)
+- Formularios: React Hook Form + Zod/Yup
+- Routing: React Router (apps SPA) o Next.js Router
+- Fechas: date-fns o @formkit/tempo (NO moment.js)
+- HTTP: Axios con React Query
+- Testing: Vitest, Testing Library, Cypress
+- Mapas: React Leaflet (preferido) o Google Maps React
+- Gráficos: Recharts o Visx
+- WebSockets: Socket.io-client
+- Drag and Drop: react-beautiful-dnd o dnd-kit
+- Virtualización: react-window o react-virtualized
+
+Al generar código, siempre:
+1. Asegúrate de que sea type-safe (sin any)
+2. Maneja errores apropiadamente con try/catch
+3. Incluye comentarios JSDoc para APIs públicas
+4. Sigue las convenciones de nomenclatura
+5. Optimiza para mantenibilidad y legibilidad
+6. Separa lógica de presentación cuando sea posible
+7. Considera la accesibilidad desde el principio
+
+8. Aplicar las soluciones sin hacer cambios que no se pidan explícitamente
