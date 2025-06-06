@@ -43,7 +43,7 @@ export const QuoteGenerator = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 flex flex-col gap-8">
+    <div className="max-w-6xl mx-auto px-4 flex flex-col gap-8 pb-4">
       {/* Preview Section */}
       <div
         ref={quoteRef}
